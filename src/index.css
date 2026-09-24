@@ -1,0 +1,32 @@
+@import "@ds/assets/Style/color.css";
+@import "@ds/assets/Style/font.css";
+@import "@ds/assets/Style/radius.css";
+@import "@ds/assets/Style/spacing.css";
+@import "@ds/assets/Style/shadow.css";
+@import "@ds/assets/Style/animation.css";
+@import "@ds/assets/Icon/icon.css";
+
+:root {
+  --font-family-tt-norms-tochka-extended: "TT Norms Tochka Extended", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: var(--page-primary);
+  color: var(--primitive-primary);
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

@@ -1,0 +1,33 @@
+/* Токены страницы ОБ. Все значения привязаны к каноническому DS (@ds).
+   Литералы после запятой — только запасной вид, если DS не подключён. */
+:root {
+  --color-primary: var(--primitive-primary, #191919);
+  --color-secondary: var(--primitive-secondary, #676767);
+  --color-brand: var(--primitive-brand, #835de1);
+  --color-error: var(--primitive-error, #d84d4d);
+  --color-success: var(--primitive-success, #3f9180);
+
+  /* Фиксированно-белый (не меняется в тёмном режиме) — для плашек на цветном фоне. */
+  --color-white-fixed: var(--primitive-default, #ffffff);
+
+  --color-page-bg: var(--page-primary, #ffffff);
+  --color-card-bg: var(--container-default, #ffffff);
+  --color-btn-bg: var(--container-transparent-1, #1919190d);
+  --color-btn-bg-hover: var(--container-transparent-2, #1919191a);
+
+  --color-badge-new: var(--category-sky, #82bad4);
+  --color-alert-bg: var(--bg-error-2, #fcd7d4);
+  --color-brand-bg: var(--bg-brand-1, #efedf8);
+
+  --shadow-card: var(--Card, 0 5px 15px rgba(0, 0, 0, 0.05));
+  --shadow-card-hover: var(--Hovered, 0 12px 25px rgba(0, 0, 0, 0.1));
+
+  /* Скругления — семантические токены DS. */
+  --radius-navigator: var(--rounding-4x, 16px);
+  --radius-section: var(--rounding-2-5x, 10px);
+  --radius-alert: var(--rounding-3x, 12px);
+  --radius-badge: var(--rounding-2-5x, 10px);
+  --radius-button: var(--rounding-2-5x, 10px);
+
+  --font-ttn: var(--font-family-tt-norms-tochka-extended, "TT Norms Tochka Extended", sans-serif);
+}

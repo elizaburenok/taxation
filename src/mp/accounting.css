@@ -1,0 +1,694 @@
+/* Стили страницы ОБ. Значения — из токенов DS (@ds).
+   Типографика — через классы .ts-* в разметке; здесь только раскладка/цвет/радиус. */
+
+/* Сброс дефолтной рамки браузерных <button>. */
+.accounting-page button,
+.accounting-sidebar button {
+  border: none;
+  font-family: var(--font-ttn);
+}
+
+/* Сброс дефолтных margin у текстовых тегов. */
+.accounting-page p,
+.accounting-page h1,
+.accounting-page h2,
+.accounting-page h3 {
+  margin: 0;
+}
+
+/* ── Page ── */
+.accounting-page {
+  flex: 1;
+  position: relative;
+  background: var(--page-secondary);
+  min-height: calc(100vh - 74px);
+}
+
+.accounting-page__content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 var(--page-horizontal-padding);
+  box-sizing: border-box;
+}
+
+.accounting-page__column {
+  width: 680px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--content-group-list-spacing);
+  padding: var(--page-top-padding) 0 var(--page-bottom-padding-with-chat);
+}
+
+.accounting-page__header-buttons {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2-5x);
+}
+
+.accounting-page__action-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2x);
+  height: 40px;
+  padding: 0 var(--spacing-3x);
+  background: var(--color-btn-bg);
+  border-radius: var(--radius-button);
+  color: var(--color-brand);
+  cursor: pointer;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+
+.accounting-page__action-btn:hover {
+  background: var(--color-btn-bg-hover);
+}
+
+/* Иконка кнопки наследует брендовый цвет текста. */
+.accounting-page__action-btn .ds-icon svg {
+  fill: currentColor;
+}
+
+.accounting-page__navigators {
+  display: flex;
+  flex-direction: column;
+  gap: var(--content-element-list-spacing);
+}
+
+.accounting-page__cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--content-element-list-spacing);
+}
+
+.accounting-page__actions-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6x);
+}
+
+/* ── Task row (акцентная задача) ── */
+.accounting-task-red {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3-5x);
+  background: var(--color-alert-bg);
+  border-radius: var(--radius-alert);
+  padding: var(--spacing-3-5x) var(--spacing-4x);
+  cursor: pointer;
+  transition: opacity 0.15s;
+  position: relative;
+}
+
+.accounting-task-red:hover {
+  opacity: 0.92;
+}
+
+.accounting-task-red__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-white-fixed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-error);
+  flex-shrink: 0;
+}
+
+.accounting-task-red__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.accounting-task-red__title {
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.accounting-task-red__subtitle {
+  color: var(--color-primary);
+  opacity: 0.75;
+  margin: var(--spacing-1x) 0 0;
+}
+
+/* ── Sidebar ── */
+.accounting-sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 280px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-6x) var(--spacing-5x);
+  background: var(--page-secondary);
+}
+
+.accounting-sidebar__back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-section);
+  background: var(--color-btn-bg);
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+
+.accounting-sidebar__back-btn:hover {
+  background: var(--color-btn-bg-hover);
+}
+
+.accounting-sidebar__heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1x);
+  margin-top: var(--spacing-10x);
+}
+
+/* Заголовок и подзаголовок — типографика через .ts-* в разметке. */
+.accounting-sidebar__title {
+  color: var(--color-primary);
+}
+
+.accounting-sidebar__subtitle {
+  color: var(--color-secondary);
+}
+
+.accounting-sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  /* Отступ от заголовка до меню (нет точного токена: 36px). */
+  margin-top: var(--spacing-9x, 36px);
+}
+
+/* Пункт меню: типографика .ts-500-s в разметке, высота строки 38px. */
+.accounting-sidebar__nav-link {
+  display: flex;
+  align-items: center;
+  height: 38px;
+  padding: 0;
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: opacity 0.15s;
+  text-decoration: none;
+  background: none;
+  text-align: left;
+}
+
+.accounting-sidebar__nav-link:hover {
+  opacity: 0.6;
+}
+
+/* ── Navigator (Задачи / Госорганы) ── */
+.navigator {
+  background: var(--color-card-bg);
+  border-radius: var(--radius-navigator);
+  box-shadow: var(--shadow-card);
+  width: 100%;
+}
+
+/* Заголовок/описание навигатора — типографика через .ts-* в разметке. */
+.navigator__title {
+  color: var(--color-primary);
+}
+
+.navigator__description {
+  color: var(--color-secondary);
+}
+
+.tasks-navigator {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-8x) var(--spacing-5x);
+}
+
+.tasks-navigator__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2-5x);
+  min-width: 0;
+}
+
+.tasks-navigator__icon {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.gov-navigator {
+  padding: var(--spacing-5x);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-5x);
+}
+
+.gov-navigator__header {
+  display: flex;
+  align-items: center;
+  height: 26px;
+}
+
+.gov-navigator__items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4x);
+}
+
+.gov-navigator__item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3x);
+  cursor: pointer;
+  text-decoration: none;
+  padding: var(--spacing-1x) 0;
+  border-radius: var(--rounding-2x);
+  transition: opacity 0.15s;
+  background: none;
+  width: 100%;
+  text-align: left;
+}
+
+.gov-navigator__item:hover {
+  opacity: 0.75;
+}
+
+.gov-navigator__item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.gov-navigator__item-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-0-5x);
+  min-width: 0;
+}
+
+.gov-navigator__item-title {
+  color: var(--color-primary);
+}
+
+.gov-navigator__item-desc {
+  color: var(--color-secondary);
+}
+
+/* ── Карточка-навигатор (Задачи / Госорганы) ── */
+.nav-card {
+  background: var(--color-card-bg);
+  border-radius: var(--radius-navigator);
+  box-shadow: var(--shadow-card);
+  padding: var(--spacing-5x);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-5x);
+}
+
+.nav-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1-5x);
+  min-height: 26px;
+}
+
+.nav-card__chevron {
+  color: var(--color-primary);
+  display: inline-flex;
+  margin-top: 5px;
+  margin-bottom: 3px;
+}
+
+.nav-card__rows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6x);
+}
+
+.nav-card__show-all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 38px;
+  padding: var(--spacing-2-5x) var(--spacing-4x);
+  border: none;
+  border-radius: var(--radius-button);
+  background: var(--color-btn-bg);
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.nav-card__show-all:hover {
+  background: var(--color-btn-bg-hover);
+}
+
+/* Кликабельный навигатор (Задачи в онбординге) */
+button.nav-card {
+  width: 100%;
+  border: none;
+  font-family: var(--font-ttn);
+  text-align: left;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+button.nav-card:hover {
+  opacity: 0.85;
+}
+
+/* ── Онбординг-виджет «Начните работу с бухгалтерией» ── */
+.ob-card {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  border: 2px solid var(--bg-brand-4);
+  border-radius: var(--rounding-4-5x);
+  overflow: hidden;
+  background: var(--color-card-bg);
+}
+
+.ob-card__header {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--spacing-6x);
+  padding: var(--spacing-7-5x);
+  background: var(--bg-brand-1);
+}
+
+.ob-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2-5x);
+}
+.ob-card__title {
+  margin: 0;
+  color: var(--color-primary);
+}
+.ob-card__subtitle {
+  margin: 0;
+  color: var(--color-secondary);
+}
+
+.ob-card__progress {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4x);
+  height: 24px;
+}
+.ob-card__progress-check {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+}
+.ob-card__progress-bar {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  height: 4px;
+}
+.ob-card__progress-track {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--rounding-1-5x);
+  background: var(--primitive-neutral-2);
+}
+.ob-card__progress-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 4px;
+  border-radius: var(--rounding-1-5x);
+  background: var(--primitive-brand);
+  transition: width 0.2s;
+}
+.ob-card__progress-count {
+  flex-shrink: 0;
+  color: var(--color-secondary);
+  white-space: nowrap;
+}
+
+.ob-card__tasks {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-5x) 0;
+  background: var(--color-card-bg);
+}
+.ob-card__task {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4x);
+  width: 100%;
+  padding: var(--spacing-2-5x) var(--spacing-5x);
+  border: none;
+  background: none;
+  text-align: left;
+  font-family: var(--font-ttn);
+  cursor: default;
+}
+button.ob-card__task {
+  cursor: pointer;
+  transition: background 0.15s;
+}
+button.ob-card__task:hover {
+  background: var(--container-transparent-1);
+}
+.ob-card__task-num {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  color: var(--primitive-neutral-4);
+}
+.ob-card__task-num svg {
+  width: 30px;
+  height: 30px;
+  fill: currentColor;
+}
+.ob-card__task-title {
+  flex: 1 1 0;
+  min-width: 0;
+  color: var(--color-primary);
+}
+.ob-card__task-chevron {
+  flex-shrink: 0;
+  color: var(--primitive-neutral-4);
+  display: inline-flex;
+}
+.ob-card__task-chevron svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.nav-row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3x);
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  text-align: left;
+  font-family: var(--font-ttn);
+  cursor: default;
+}
+button.nav-row {
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+button.nav-row:hover {
+  opacity: 0.75;
+}
+
+.nav-row__icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+}
+.nav-row__icon img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.nav-row__text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-0-5x);
+}
+.nav-row__title {
+  color: var(--color-primary);
+}
+.nav-row__desc {
+  color: var(--color-secondary);
+}
+.nav-row__desc--danger {
+  color: var(--color-error);
+}
+
+.nav-row__right {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+}
+.nav-row__amount {
+  color: var(--color-primary);
+}
+.nav-row__chevron {
+  color: var(--primitive-neutral-4);
+  display: inline-flex;
+}
+.nav-row__chevron svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.nav-badge {
+  min-width: 18px;
+  height: 18px;
+  padding: 0 var(--spacing-1-25x, 5px);
+  border-radius: var(--rounding-pill);
+  background: var(--primitive-error);
+  color: var(--color-white-fixed);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-clock {
+  color: var(--primitive-neutral-4);
+  display: inline-flex;
+}
+
+/* ── Section card ── */
+.section-card {
+  background: var(--color-card-bg);
+  border-radius: var(--radius-section);
+  box-shadow: var(--shadow-card);
+  padding: var(--spacing-4x);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-5x);
+  cursor: pointer;
+  transition: box-shadow 0.15s, transform 0.1s;
+  text-decoration: none;
+  width: 100%;
+  border: none;
+  text-align: left;
+  font-family: var(--font-ttn);
+}
+
+.section-card:hover {
+  box-shadow: var(--shadow-card-hover);
+}
+
+.section-card__icon-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.section-card__icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.section-card__badge {
+  background: var(--color-badge-new);
+  color: var(--color-white-fixed);
+  padding: 1.5px var(--spacing-1-5x);
+  border-radius: var(--radius-badge);
+  white-space: nowrap;
+  align-self: flex-start;
+  margin-top: 3px;
+}
+
+.section-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-0-5x);
+  justify-content: flex-end;
+  min-height: 38px;
+  width: 100%;
+}
+
+.section-card__title {
+  color: var(--color-primary);
+}
+
+.section-card__description {
+  color: var(--color-secondary);
+}
+
+/* ── Page action row ── */
+.mp-page-action {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-decoration: none;
+  cursor: pointer;
+  padding: var(--spacing-1x) 0;
+  transition: opacity 0.15s;
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: var(--font-ttn);
+}
+
+.mp-page-action:hover {
+  opacity: 0.75;
+}
+
+.mp-page-action__icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  flex-shrink: 0;
+  margin-right: var(--spacing-4x);
+}
+
+.mp-page-action__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-0-5x);
+  flex: 1;
+  min-width: 0;
+}
+
+.mp-page-action__title {
+  color: var(--color-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mp-page-action__description {
+  color: var(--color-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
