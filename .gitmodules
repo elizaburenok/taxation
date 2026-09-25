@@ -1,0 +1,3 @@
+[submodule "design-system"]
+	path = design-system
+	url = https://gitlab.tochka-tech.com/design-community/ai-learning/design-system.git

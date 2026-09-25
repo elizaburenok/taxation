@@ -13,7 +13,7 @@
     "jsx": "react-jsx",
     "strict": true,
     "paths": {
-      "@ds/*": ["../design-system/src/*"]
+      "@ds/*": ["./design-system/src/*"]
     }
   },
   "include": ["src"]
