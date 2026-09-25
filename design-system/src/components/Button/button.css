@@ -1,0 +1,114 @@
+.button {
+  --button-radius: var(--rounding-2-5x);
+  --button-height: 50px;
+  --button-width: 280px;
+  --button-bg: transparent;
+  --button-color: var(--primitive-primary);
+  --button-bg-hovered: var(--button-bg);
+  --button-bg-disabled: var(--button-bg);
+  --button-color-disabled: var(--primitive-neutral-4);
+  --button-spinner-color: var(--button-color);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--button-width);
+  min-width: var(--button-width);
+  height: var(--button-height);
+  padding: var(--spacing-3x) var(--spacing-3-5x);
+  border: 0;
+  border-radius: var(--rounding-2-5x);
+  background: var(--button-bg);
+  color: var(--button-color);
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  appearance: none;
+}
+
+.button:hover:not(:disabled):not(.is-loading) {
+  background: var(--button-bg-hovered);
+}
+
+.button:disabled,
+.button.is-disabled {
+  background: var(--button-bg-disabled);
+  color: var(--button-color-disabled);
+  cursor: not-allowed;
+}
+
+.button.is-loading {
+  color: transparent;
+}
+
+.button__label {
+  width: 100%;
+  color: inherit;
+}
+
+.button .ds-spinner {
+  --spinner-color: var(--button-spinner-color);
+}
+
+.button.is-loading .ds-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: none;
+  margin-top: calc(-1 * var(--spacing-3x));
+  margin-left: calc(-1 * var(--spacing-3x));
+}
+
+.button.is-loading .ds-spinner {
+  display: block;
+}
+
+.button--primary {
+  --button-bg: var(--bg-brand);
+  --button-color: var(--primitive-default);
+  --button-bg-hovered: var(--state-bg-brand-active);
+  --button-bg-disabled: var(--container-transparent-1);
+  --button-spinner-color: var(--primitive-default);
+}
+
+.button--secondary {
+  --button-bg: var(--container-transparent-1);
+  --button-color: var(--primitive-primary);
+  --button-bg-hovered: var(--state-container-transparent-1-active);
+  --button-bg-disabled: var(--container-transparent-1);
+  --button-spinner-color: var(--primitive-brand);
+}
+
+.button--transparent {
+  --button-bg: transparent;
+  --button-color: var(--primitive-brand);
+  --button-bg-hovered: var(--container-transparent-1);
+  --button-bg-disabled: var(--container-transparent-1);
+  --button-spinner-color: var(--primitive-brand);
+}
+
+.button--white {
+  --button-bg: var(--bg-default);
+  --button-color: var(--primitive-brand);
+  --button-bg-hovered: var(--bg-default);
+  --button-bg-disabled: var(--container-transparent-1-inverse);
+  --button-spinner-color: var(--primitive-brand);
+}
+
+.button-showcase {
+  width: fit-content;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 280px);
+  gap: var(--spacing-3-5x);
+}
+
+.button-grid__cell--inverse {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  background: transparent;
+}

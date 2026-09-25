@@ -1,0 +1,21 @@
+.widget {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  border-radius: var(--rounding-4x);
+  background: var(--container-default);
+  box-shadow: var(--Card);
+  overflow: hidden;
+}
+
+.widget__content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--spacing-4x);
+  width: 100%;
+  padding: var(--spacing-2-5x) var(--spacing-5x) var(--spacing-5x);
+  box-sizing: border-box;
+}

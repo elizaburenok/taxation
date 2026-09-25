@@ -1,0 +1,107 @@
+.modal-header {
+  display: flex;
+  flex-direction: column;
+  background: var(--popup-primary);
+}
+
+.modal-header__navigation {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr) 120px;
+  align-items: start;
+  min-height: 64px;
+  padding: var(--spacing-1-5x) var(--page-horizontal-padding) 0;
+}
+
+.modal-header__center {
+  min-width: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.modal-header__title {
+  color: var(--primitive-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--font-family-tt-norms-tochka-extended);
+}
+
+.modal-header__title--default {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0;
+}
+
+.modal-header__title--compact {
+  display: none;
+  width: 100%;
+  padding-top: var(--spacing-4x);
+  text-align: center;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+}
+
+.modal-header__title-block {
+  padding: 0 var(--page-horizontal-padding) var(--spacing-4x);
+}
+
+.modal__header--compact .modal-header__title-block {
+  display: none;
+}
+
+.modal__header--compact .modal-header__title--compact {
+  display: block;
+}
+
+.modal-header__side {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 120px;
+  min-height: 52px;
+  color: var(--primitive-primary);
+}
+
+.modal-header__navigation > .modal-header__side:last-child {
+  justify-content: flex-end;
+}
+
+.modal-header__side--empty {
+  visibility: hidden;
+}
+
+.modal-header__control {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  appearance: none;
+}
+
+/* Empty variant — пустой спейсер вместо шапки */
+.modal-header--empty {
+  height: 30px;
+  border-radius: var(--rounding-4-5x) var(--rounding-4-5x) 0 0;
+  background: var(--popup-primary);
+}
+
+@media (max-width: 640px) {
+  .modal-header--empty {
+    height: 64px;
+    border-radius: 0;
+    background: var(--page-primary);
+  }
+}
+
+.modal-header__control:focus-visible {
+  outline: 2px solid var(--primitive-brand);
+  outline-offset: 2px;
+  border-radius: var(--rounding-2x);
+}
+
+.modal-header__icon {
+  color: inherit;
+}

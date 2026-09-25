@@ -1,0 +1,48 @@
+.modal {
+  --modal-width: 480px;
+  --modal-max-height: 620px;
+
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-8x);
+}
+
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: var(--overlay-popup);
+  appearance: none;
+}
+
+.modal__panel {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: min(var(--modal-width), calc(100vw - var(--spacing-16x)));
+  max-height: min(var(--modal-max-height), calc(100vh - var(--spacing-16x)));
+  background: var(--popup-primary);
+  border-radius: var(--rounding-6x);
+  box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.modal__header,
+.modal__footer {
+  flex: 0 0 auto;
+}
+
+.modal__content {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.modal__content-inner {
+  padding: var(--spacing-3x) var(--page-horizontal-padding);
+}

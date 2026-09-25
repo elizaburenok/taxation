@@ -1,0 +1,24 @@
+.drawer-header-title {
+  width: 100%;
+  text-align: center;
+  color: var(--primitive-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.drawer-header-title--text-m {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+}
+
+.drawer-header-title--text-l {
+  font-family: var(--font-family-tt-norms-tochka-extended);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.01em;
+}

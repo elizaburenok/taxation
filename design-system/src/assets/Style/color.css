@@ -1,0 +1,90 @@
+:root {
+  --primitive-primary: #191919;
+  --primitive-secondary: #676767;
+  --primitive-neutral-4: #949494;
+  --primitive-neutral-3: #c8c8c8;
+  --primitive-neutral-2: #d4d4d4;
+  --primitive-neutral-1: #e1e1e1;
+  --primitive-default: #ffffff;
+  --primitive-brand: #835de1;
+  --primitive-error: #d84d4d;
+  --primitive-success: #3f9180;
+  --primitive-warning: #f0c555;
+  --primitive-warning-2: #9a7811;
+
+  --bg-neutral-4: #aeaeae;
+  --bg-neutral-3: #e1e1e1;
+  --bg-neutral-2: #eeeeee;
+  --bg-neutral-1: #f4f4f4;
+  --bg-default: #ffffff;
+  --bg-brand: #835de1;
+  --bg-brand-5: #b39df7;
+  --bg-brand-4: #cabef3;
+  --bg-brand-3: #d6cef3;
+  --bg-brand-2: #e2ddf6;
+  --bg-brand-1: #efedf8;
+  --bg-error: #d84d4d;
+  --bg-error-5: #f98e88;
+  --bg-error-4: #fbb2ab;
+  --bg-error-3: #ffc3be;
+  --bg-error-2: #fcd7d4;
+  --bg-error-1: #f9ebea;
+  --bg-success: #3f9180;
+  --bg-success-5: #7ac6b2;
+  --bg-success-4: #a5d7ca;
+  --bg-success-3: #b5e3d7;
+  --bg-success-2: #c9eee3;
+  --bg-success-1: #ddf8ef;
+  --bg-warning: #f0c555;
+  --bg-warning-5: #f0c555;
+  --bg-warning-4: #fad370;
+  --bg-warning-3: #fde2a2;
+  --bg-warning-2: #fbefd2;
+  --bg-warning-1: #fcf5e3;
+
+  --container-default: #ffffff;
+  --container-transparent-1: #1919190d;
+  --container-transparent-1-inverse: #FFFFFF1A;
+  --container-transparent-2: #1919191a;
+  --container-transparent-2-inverse: #FFFFFF26;
+
+  --page-primary: #ffffff;
+  --page-secondary: #f9f9f9;
+
+  --popup-primary: #ffffff;
+  --popup-secondary: #f9f9f9;
+
+  --overlay-popup: #19191966;
+  --overlay-primary-alpha-050: #19191980;
+
+  --category-sand: #de9c7e;
+  --category-coral: #e59594;
+  --category-flamingo: #d796c1;
+  --category-orchid: #c799df;
+  --category-amethyst: #b79fe9;
+  --category-lavender: #a8a3f1;
+  --category-indigo: #95aee2;
+  --category-sky: #82bad4;
+  --category-mint: #82bebe;
+  --category-emerald: #91c089;
+
+  --translucent-primitives-secondary: #191919a6;
+  --translucent-primitives-neutral-4: #19191973;
+  --translucent-primitives-neutral-3: #19191940;
+  --translucent-primitives-neutral-2: #19191933;
+  --translucent-primitives-neutral-1: #19191926;
+
+  --state-bg-brand-active: #9b7ef1;
+  --state-bg-default-active: #e1e1e1;
+  --state-container-transparent-1-active: #1919191a;
+  --state-container-transparent-2-active: #19191926;
+
+  --extended-popup-primary-elevation-1: #ffffff;
+  --extended-popup-primary-elevation-2: #ffffff;
+  --extended-popup-primary-elevation-3: #ffffff;
+  --extended-popup-secondary-elevation-1: #f9f9f9;
+  --extended-popup-secondary-elevation-2: #f9f9f9;
+  --extended-popup-secondary-elevation-3: #f9f9f9;
+
+  --bg-demo: #fafafa;
+}
